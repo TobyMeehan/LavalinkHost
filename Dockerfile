@@ -4,4 +4,4 @@ WORKDIR /opt/Lavalink
 
 COPY application.yml application.yml
 
-EXPOSE 80
+EXPOSE 2333
