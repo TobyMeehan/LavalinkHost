@@ -1,4 +1,4 @@
-FROM fredboat/lavalink:master-v3
+FROM fredboat/lavalink:v3.6
 
 WORKDIR /opt/Lavalink
 
