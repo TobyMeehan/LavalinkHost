@@ -2,10 +2,15 @@ server: # REST and WS server
   port: 2333
   address: 0.0.0.0
 lavalink:
+  plugins:
+    # Replace VERSION with the current version as shown by the Releases tab or a long commit hash for snapshots.
+    - dependency: "dev.lavalink.youtube:youtube-plugin:VERSION"
+      repository: "https://maven.lavalink.dev/releases" # use https://maven.lavalink.dev/snapshots if you want to use a snapshot version.
+
   server:
     password: "superstrongpassword"
     sources:
-      youtube: true
+      youtube: false
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -46,3 +51,13 @@ logging:
   level:
     root: INFO
     lavalink: INFO
+
+plugins:
+  youtube:
+    enabled: true # Whether this source can be used.
+    allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
+    allowDirectVideoIds: true # Whether just video IDs can match. If false, only complete URLs will be loaded.
+    allowDirectPlaylistIds: true # Whether just playlist IDs can match. If false, only complete URLs will be loaded.
+    # The clients to use for track loading. See below for a list of valid clients.
+    # Clients are queried in the order they are given (left-to-right)
+    clients: ["ANDROID", "WEB"]
